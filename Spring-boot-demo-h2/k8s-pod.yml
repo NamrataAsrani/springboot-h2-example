@@ -6,7 +6,7 @@ metadata:
 spec:
   containers:
      - name: spring-boot-k8s
-       image: nam908/h2-demo
+       image: nam908/java-springboot
 # Image that will be used to containers in the cluster
        imagePullPolicy: IfNotPresent
           #restartPolicy: Always
