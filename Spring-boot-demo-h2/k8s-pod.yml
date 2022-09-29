@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: pod # Kubernetes resource kind we are creating
+kind: Pod # Kubernetes resource kind we are creating
 metadata:
   name: spring-boot-k8s
 
