@@ -1,15 +1,18 @@
-apiVersion: v1
-kind: Deployment # Kubernetes resource kind we are creating
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: spring-boot-k8s
-
+  name: kubernetes-demo
 spec:
-  containers:
-     - name: spring-boot-k8s
-       image: nam908/java-springboot
-# Image that will be used to containers in the cluster
-       imagePullPolicy: IfNotPresent
-          #restartPolicy: Always
-         # ports:
-            #- containerPort: 8080 
-# The port that the container is running on in the cluster
+  selector:
+    matchLabels:
+      app: kubernetes-demo
+  replicas: 1 # tells deployment to run 2 pods matching the template
+  template:
+    metadata:
+      labels:
+        app: kubernetes-demo
+    spec:
+      containers:
+      - name: kubernetes-demo
+        image: nam908/java-springboot
+      
