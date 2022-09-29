@@ -1,16 +1,8 @@
 apiVersion: apps/v1
-kind: Deployment # Kubernetes resource kind we are creating
+kind: pod # Kubernetes resource kind we are creating
 metadata:
   name: spring-boot-k8s
-spec:
-  selector:
-    matchLabels:
-      app: spring-boot-k8s
-  replicas:  # Number of replicas that will be created for this deployment
-  template:
-    metadata:
-      labels:
-        app: spring-boot-k8s
+
 spec:
   containers:
      - name: spring-boot-k8s
