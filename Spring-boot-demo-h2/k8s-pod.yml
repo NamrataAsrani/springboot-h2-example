@@ -1,18 +1,22 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: ReplicaSet
 metadata:
-  name: kubernetes-demo
+  name: springbooth2example-rs
+  labels:
+    app: springbooth2example
 spec:
+  replicas: 1
   selector:
     matchLabels:
-      app: kubernetes-demo
-  replicas: 1 # tells deployment to run 2 pods matching the template
+      app: springbooth2example
   template:
     metadata:
+      name: springbooth2example
       labels:
-        app: kubernetes-demo
+        app: springbooth2example
     spec:
       containers:
-      - name: kubernetes-demo
-        image: nam908/java-springboot
-      
+        - name: springbooth2example
+          image: nam908/java-springboot
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always

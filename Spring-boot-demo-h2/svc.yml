@@ -4,7 +4,7 @@ metadata:
   name: example-svc
 spec:
   selector:
-    app: kubernetes-demo
+    app: springbooth2example
   ports:
     - port: 8765
       targetPort: 8222
